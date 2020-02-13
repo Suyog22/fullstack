@@ -29,6 +29,11 @@ export class AppComponent {
     this.http.post(("http://localhost:8080/savemobile"),this.myMobile).subscribe();
   }
 
+  deleteMyMobile(id)
+  {
+       this.http.delete(("http://localhost:8080/delete/"+id)).subscribe();
+  }
+
 
 }
 interface Mobile {

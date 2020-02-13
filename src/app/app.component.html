@@ -5,11 +5,13 @@
     <th>Id</th>
     <th>Name</th>
     <th>Price</th>
+    <th>Delete Phone</th>
   </tr>
   <tr *ngFor="let mobile of httpData">
     <td>{{mobile.id}}</td>
     <td>{{mobile.name}}</td>
     <td>{{mobile.price}}</td>
+    <button (click) ="deleteMyMobile(mobile.id)">Delete</button>
   </tr>
 </table>
 
