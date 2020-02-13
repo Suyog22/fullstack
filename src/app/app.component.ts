@@ -26,7 +26,7 @@ export class AppComponent {
   saveMyMobile()
   {
     this.myMobile = {name:this.mobileName,price:this.price};
-    return this.http.post(("http://localhost:8080/savemobile"),this.myMobile);
+    this.http.post(("http://localhost:8080/savemobile"),this.myMobile).subscribe();
   }
 
 
