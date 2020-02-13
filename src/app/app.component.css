@@ -3,5 +3,6 @@ p {
 }
 
 table,tr,th{
-  border: solid black 1px
+  border: solid black 1px;
+  margin:7px;
 }

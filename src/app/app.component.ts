@@ -10,8 +10,10 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
   url="http://localhost:8080/listofmobiles";
 
-  mobileName : String;
-  price: String;
+  mobileName : string;
+  price: string;
+
+  myMobile : Mobile;
 
   httpData:any;
   ngOnInit() {
@@ -19,6 +21,12 @@ export class AppComponent {
       this.httpData=data;
     })
 
+  }
+
+  saveMyMobile()
+  {
+    this.myMobile = {name:this.mobileName,price:this.price};
+    return this.http.post(("http://localhost:8080/savemobile"),this.myMobile);
   }
 
 
