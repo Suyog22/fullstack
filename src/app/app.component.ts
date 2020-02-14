@@ -15,12 +15,20 @@ export class AppComponent {
   myMobile : Mobile;
 
   httpData:any;
+
+  getLables:string[];
+
   ngOnInit() {
     this.http.get<Mobile[]>(this.url).subscribe(data => {
-      this.httpData=data;
-    })
-
+      this.httpData=data as [];
+    });
   }
+
+
+  public pieChartLabels:string[] = ['Chrome', 'Safari', 'Firefox','Internet Explorer','Other','Opera'];
+  public pieChartData:number[] = [40, 20, 20 , 10,5,15];
+  public pieChartType:string = 'pie';
+ 
 
   saveMyMobile()
   {
@@ -33,6 +41,13 @@ export class AppComponent {
        this.http.delete(("http://localhost:8080/delete/"+id)).subscribe();
   }
 
+  showdataAtconsole()
+  {
+  for (let entry of this.httpData) {
+      let myname :string = entry.name;
+      this.getLables.push(myname);
+    }
+  }
 
 }
 interface Mobile {

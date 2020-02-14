@@ -31,5 +31,15 @@
 <button id ="insert" style="border:none;background-color:black;color:white;margin:5px;padding:10px" (click) = "saveMyMobile()">Insert</button>
 </div>
 
+<button (click) = "showdataAtconsole()">Show Data as a piechart</button>
 {{myMobile.name}}
 {{myMobile.price}}
+
+
+<div style="display: block">
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          ></canvas>
+</div>
