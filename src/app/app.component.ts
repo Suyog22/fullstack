@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Angular 6';
   constructor(private http: HttpClient) { }
   url="http://localhost:8080/listofmobiles";
 
