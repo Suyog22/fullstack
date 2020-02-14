@@ -16,12 +16,25 @@ export class AppComponent {
 
   httpData:any;
 
-  getLables:string[];
+  getLables:string[] = [];
+
+  getPrice:string[] = [];
 
   ngOnInit() {
     this.http.get<Mobile[]>(this.url).subscribe(data => {
       this.httpData=data as [];
     });
+
+    // for (let entry of this.httpData) {
+    //   let myname :string = entry.name;
+    //   this.getLables.push(myname);
+    // }
+
+    // for (let entry of this.httpData) {
+    //   let myprice :string = entry.price;
+    //   this.getPrice.push(myprice);
+    // }
+
   }
 
 
