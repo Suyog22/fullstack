@@ -36,10 +36,11 @@
 {{myMobile.price}}
 
 
-<div style="display: block">
+<div *ngIf = "showData" style="display: block">
   <canvas baseChart
-          [data]="pieChartData"
-          [labels]="pieChartLabels"
+          [data]="getPrice"
+          
+          [labels]="getLables"
           [chartType]="pieChartType"
           ></canvas>
 </div>
