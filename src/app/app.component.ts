@@ -16,9 +16,9 @@ export class AppComponent {
 
   httpData:any;
 
-  getLables:string[] = [];
+  getLables = [];
 
-  getPrice:number[] = [];
+  getPrice = [];
 
   showData = false;
 
@@ -60,20 +60,23 @@ export class AppComponent {
 
   showdataAtconsole()
   {
-  this.showData = !this.showData;
-  
-  for (let entry of this.httpData) {
-      let myPrice : number = entry.price;
-      this.getPrice.push(myPrice);
-    }
+      this.showData = !this.showData;
+      let priceSet = new Set();
+      for (let entry of this.httpData) {
+          let myPrice : number = entry.price;
+          priceSet.add(myPrice);
+        }
+      this.getPrice = Array.from(priceSet.values());
 
-  
-  for (let entry of this.httpData) {
-      let myname :string = entry.name;
-      this.getLables.push(myname);
-    }
+
+      let nameSet = new Set();
+      for (let entry of this.httpData) {
+          let myname :string = entry.name;
+          nameSet.add(myname);
+        }
+        this.getLables = Array.from(nameSet.values());
   }
-
+ 
 }
 interface Mobile {
   name:string;
