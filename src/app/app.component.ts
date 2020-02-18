@@ -60,6 +60,7 @@ export class AppComponent {
 
   showdataAtconsole()
   {
+    // To avoid duplication,first data is added into set and then converted into array
       this.showData = !this.showData;
       let priceSet = new Set();
       for (let entry of this.httpData) {
